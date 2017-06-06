@@ -225,6 +225,7 @@ body {
 
 .tabs {
     padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .tabs .container {
@@ -261,40 +262,43 @@ body {
 }
 
 .tab-content .imge-wrap {
-    border-radius: 3px;
+	margin-bottom: 40px;
+    border-radius: 10px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.tab-content .imge-wrap:hover {}
-
-.tab-content .imge-wrap:nth-child(2n+1) {
+.tab-content .left-col {
     width: 40%;
     float: left;
+    padding-right: 20px;
 }
 
-.tab-content .imge-wrap:nth-child(2n) {
+.tab-content .right-col {
     width: 60%;
     float: right;
+    padding-left: 20px;
 }
 
-.tab-content .imge-wrap:first-child {
+.tab-content .imge-wrap:hover {}
+
+.left-col .imge-wrap:first-child {
     height: 302px;
     background-image: url("../img/groupe-2.png");
 }
 
-.tab-content .imge-wrap:nth-child(2) {
-    height: 438px;
-    background-image: url("../img/groupe-1.png");
-}
-
-.tab-content .imge-wrap:nth-child(3) {
+.left-col .imge-wrap:last-child {
     height: 486px;
     background-image: url("../img/place-me-inside-psd.png");
 }
 
-.tab-content .imge-wrap:last-child {
+.right-col .imge-wrap:first-child {
+    height: 438px;
+    background-image: url("../img/groupe-1.png");
+}
+
+.right-col .imge-wrap:last-child {
     height: 350px;
     background-image: url("../img/40-layers.png");
 }
