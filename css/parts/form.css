@@ -1,0 +1,38 @@
+/*form*/
+
+.form {}
+
+.form__text--name {
+    width: 50%;
+    float: left;
+}
+
+.form__text--email {
+    width: 5S0%;
+    float: right;
+}
+
+.form__text--message {
+    clear: both;
+}
+
+.form__btn {
+    width: 100%;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+    display: block;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background-color: #48bf72;
+}
+
+.form__btn:hover {
+    cursor: pointer;
+    color: #3c4955;
+	border-radius: 3px;
+	background-color: darkgrey;
+}

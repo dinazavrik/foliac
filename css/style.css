@@ -1,95 +1,16 @@
-/*Common styles*/
+@import "parts/global.css";
+@import "parts/button.css";
+@import "parts/text-btn.css";
+@import "parts/form.css";
 
-* {
-    box-sizing: border-box;
-}
-
-.clearfix {
-    clear: both;
-}
-
-.clear:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-@font-face {
-    font-family: 'Big John';
-    src: url('../fonts/BigJohn.eot');
-    src: url('../fonts/BigJohn.eot?#iefix') format('embedded-opentype'), url('../fonts/BigJohn.woff2') format('woff2'), url('BigJohn.woff') format('woff'), url('../fonts/BigJohn.svg#BigJohn') format('svg');
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    unicode-range: U+0020-00BF;
-}
-
-@font-face {
-    font-family: 'Slim Joe';
-    src: url('../fonts/SlimJoe.eot');
-    src: url('../fonts/SlimJoe.eot?#iefix') format('embedded-opentype'), url('../fonts/SlimJoe.woff2') format('woff2'), url('../fonts/SlimJoe.woff') format('woff'), url('../fonts/SlimJoe.svg#SlimJoe') format('svg');
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    unicode-range: U+0020-00BF;
-}
-
-
-/*Lato fond family*/
-
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-}
-
-.container {
-    width: 100%;
-    max-width: 1170px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-
-/* Button */
-
-.btn-wrap {
-    padding-top: 25px;
-}
-
-.btn {
-    width: auto;
-    min-width: 138px;
-    height: auto;
-    display: inline-block;
-    color: #48bf72;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 25px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 3px;
-    border: 2px solid #48bf72;
-    padding: 15px 20px;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    color: white;
-    border: 2px solid white;
-}
-
-
-/*Header styles*/
+/*Header*/
 
 .site-header {
     height: 100vh;
     padding-top: 36px;
     position: relative;
-    background-color: rgba(60, 73, 85, 1);
     z-index: 1;
+    background-color: rgba(60, 73, 85, 1);
 }
 
 .site-header:before {
@@ -161,7 +82,7 @@ body {
 }
 
 .menu .menu-item:before {
-    content: "/";
+    content: '/';
     position: absolute;
     left: 0;
     color: white;
@@ -195,7 +116,7 @@ body {
 }
 
 
-/* Header info */
+/*Header info*/
 
 .site-header .info {
     width: 90%;
@@ -204,15 +125,15 @@ body {
     text-align: center;
 }
 
-.site-header .title {
+.info__title {
     margin-top: 0;
-    font-family: 'Big John';
+    font-family: "Big John";
     font-size: 46px;
     color: white;
     text-transform: uppercase;
 }
 
-.site-header .subtitle {
+.info__subtitle {
     margin-top: 0;
     font-family: "Slim Joe";
     font-size: 30px;
@@ -225,7 +146,7 @@ body {
 
 .tabs {
     padding-top: 50px;
-	padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .tabs .container {
@@ -239,12 +160,12 @@ body {
     list-style: none;
 }
 
-.tabs-menu li {
+.tabs-menu__item {
     float: left;
     padding: 0 8px 16px;
 }
 
-.tabs-menu li a {
+.tabs-menu__link {
     display: block;
     padding: 9px 15px;
     font-size: 16px;
@@ -252,53 +173,142 @@ body {
     text-decoration: none;
     color: #3c4955;
     background-color: #eaeaea;
-    border-radius: 2px;
     transition: all .3s ease;
+    border-radius: 2px;
 }
 
-.tabs-menu li a:hover {
-    color: #ffffff;
+.tabs-menu__link--active {
+    color: #fff;
     background-color: #48bf72;
 }
 
-.tab-content .imge-wrap {
-	margin-bottom: 40px;
+.tabs-menu__link:hover {
+    color: #fff;
+    background-color: #48bf72;
+}
+
+.tab-content__left-col {
+    width: 40%;
+    padding-right: 20px;
+    float: left;
+}
+
+.tab-content__right-col {
+    width: 60%;
+    padding-left: 20px;
+    float: right;
+}
+
+.tab-content__image-wrap {
+    position: relative;
+    margin-bottom: 40px;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
 
-.tab-content .left-col {
-    width: 40%;
-    float: left;
-    padding-right: 20px;
+.tab-content__image-wrap:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(72, 191, 114, 0.8);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s ease;
 }
 
-.tab-content .right-col {
-    width: 60%;
-    float: right;
-    padding-left: 20px;
+.tab-content__image-wrap:hover:before {
+    opacity: 1;
 }
 
-.tab-content .imge-wrap:hover {}
-
-.left-col .imge-wrap:first-child {
+.tab-content__image-wrap--first {
     height: 302px;
     background-image: url("../img/groupe-2.png");
 }
 
-.left-col .imge-wrap:last-child {
+.tab-content__image-wrap--second {
     height: 486px;
     background-image: url("../img/place-me-inside-psd.png");
 }
 
-.right-col .imge-wrap:first-child {
+.tab-content__image-wrap--third {
     height: 438px;
     background-image: url("../img/groupe-1.png");
 }
 
-.right-col .imge-wrap:last-child {
+.tab-content__image-wrap--fourth {
     height: 350px;
     background-image: url("../img/40-layers.png");
+}
+
+
+/*Image Text*/
+
+.tab-content__text-wrap {
+    display: inline-block;
+    /*for align*/
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.tab-content__image-wrap:hover .tab-content__text-wrap {
+    opacity: 1;
+}
+
+.tab-content__text {
+    display: table-cell;
+    /*for align*/
+    vertical-align: middle;
+    /*for align*/
+    color: #fff;
+    line-height: 30px;
+}
+
+.tab-content__text--first {
+    height: 302px;
+    /*for align*/
+}
+
+.tab-content__text--second {
+    height: 486px;
+    /*for align*/
+}
+
+.tab-content__text--third {
+    height: 438px;
+    /*for align*/
+}
+
+.tab-content__text--fourth {
+    height: 350px;
+    /*for align*/
+}
+
+.tab-content__subtitle {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+
+/*Contact form section*/
+
+.contact-form {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.contact-form__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: #48bf72;
+    font-family: "Big John";
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 25px;
 }
